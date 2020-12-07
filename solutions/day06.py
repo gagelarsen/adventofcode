@@ -4,23 +4,14 @@ Day 06 of the Advent of Code Challenge
 Author: Gage Larsen
 Date: December 5, 2020
 """
-from string import ascii_lowercase
-
-
-def count_group_yes(group_input, all_yes=False):
-    groups = [x.split() for x in group_input.split('\n\n')]
-    yes_count = 0
-    for group in groups:
-        answers = {letter: sum([1 for x in group if letter in x]) for letter in ascii_lowercase}
-        yes_count += len([x for x in answers.values() if (all_yes and x == len(group)) or (not all_yes and x > 0)])
-    return yes_count
+import functools
 
 
 def main():
-    groups = example_data
-    yes_count = count_group_yes(groups)
+    groups = puzzle_data
+    yes_count = sum([len(x) for x in [functools.reduce(lambda a, b: set(list(a)) | set(list(b)), y) for y in [x for x in [x.split() for x in groups.split('\n\n')]]]])
     print(f'The answer to part 1 is: {yes_count}')
-    yes_count = count_group_yes(groups, all_yes=True)
+    yes_count = sum([len(x) for x in [functools.reduce(lambda a, b: set(list(a)) & set(list(b)), y) for y in [x for x in [x.split() for x in groups.split('\n\n')]]]])
     print(f'The answer to part 2 is: {yes_count}')
 
 
