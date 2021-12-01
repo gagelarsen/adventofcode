@@ -1,6 +1,6 @@
 from typing import List
 
-from data.day_01_data import *
+from data.day_01_data import EXAMPLE_DATA, PUZZLE_DATA
 from day_base import AdventDay
 
 
@@ -22,4 +22,4 @@ class Day01(AdventDay):
 
 
 if __name__ == '__main__':
-    Day01().get_answers(EXAMPLE_DEPTHS, PUZZLE_DEPTHS)
+    Day01().get_answers(EXAMPLE_DATA, PUZZLE_DATA)

@@ -1,5 +1,5 @@
 """
-Puzzle Data Day 1
+Puzzle Data Day 2
 
 This file was created on December 01, 2021
 """
