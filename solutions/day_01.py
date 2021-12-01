@@ -10,14 +10,14 @@ DECREASE = 'd'
 
 class Day01(AdventDay):
 
-    def answer_01(self, depths: List[int]) -> int:
-        measurements = map(lambda x, y: INCREASE if x < y else DECREASE, depths[:-1], depths[1:])
+    def answer_01(self, depths: List[int], chunk_size: int = 1) -> int:
+        adjusted_array = [sum(depths[x:x+chunk_size]) for x in range(len(depths)) if x + chunk_size - 1 < len(depths)]
+        measurements = map(lambda x, y: INCREASE if x < y else DECREASE, adjusted_array[:-1], adjusted_array[1:])
         answer = list(measurements).count(INCREASE)
         return answer
 
     def answer_02(self, depths: List[int]) -> int:
-        summed_measurements = map(lambda x, y, z: x + y + z, depths[0:-2], depths[1:-1], depths[2:])
-        answer = self.answer_01(list(summed_measurements))
+        answer = self.answer_01(depths=depths, chunk_size=3)
         return answer
 
 
