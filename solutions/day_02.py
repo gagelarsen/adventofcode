@@ -1,4 +1,5 @@
-from data.day_02_data import EXAMPLE_DATA, PUZZLE_DATA
+from data.day_02_data import EXAMPLE_DATA, PUZZLE_DATA, EXAMPLE_ANSWER_01, EXAMPLE_ANSWER_02, \
+    PUZZLE_ANSWER_01, PUZZLE_ANSWER_02
 from day_base import AdventDay
 
 
@@ -14,4 +15,5 @@ class Day02(AdventDay):
 
 
 if __name__ == '__main__':
-    Day02().get_answers(EXAMPLE_DATA, PUZZLE_DATA)
+    day_02 = Day02(EXAMPLE_ANSWER_01, EXAMPLE_ANSWER_02, PUZZLE_ANSWER_01, PUZZLE_ANSWER_02)
+    day_02.get_answers(EXAMPLE_DATA, PUZZLE_DATA)
