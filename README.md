@@ -17,4 +17,4 @@ People I know
 -------------
 Here are some of the people I know who are also joining in on the fun!
 
-- [Justin Hammon](https://github.com/Justintime50/adventofcode-2020)
+- [Justin Hammond](https://github.com/Justintime50/adventofcode-2020)
