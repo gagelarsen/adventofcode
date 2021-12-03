@@ -12,7 +12,6 @@ class Day02(AdventDay):
             'up': lambda _x, _y, _count: (_x,  _y - _count),
             'down': lambda _x, _y, _count: (_x,  _y + _count),
             'forward': lambda _x, _y, _count: (_x + _count, _y),
-            'backward': lambda _x, _y, _count: (_x - _count, _y),
         }
 
         for item in input_data:
@@ -27,7 +26,6 @@ class Day02(AdventDay):
             'up': lambda _x, _y, _aim, _count: (_x,  _y, _aim - _count),
             'down': lambda _x, _y, _aim, _count: (_x,  _y, _aim + _count),
             'forward': lambda _x, _y, _aim, _count: (_x + _count,  _y + (_aim * _count), _aim),
-            'backward': lambda _x, _y, _aim, _count: (_x + _count,  _y - (_aim * _count), _aim),
         }
 
         for item in input_data:
